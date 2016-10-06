@@ -1,0 +1,109 @@
+<form class="center">
+	<p class="mention">* champs obligatoire</p>
+
+	<div class="block-form">
+		<label for="nom">Votre nom</label>
+		<input type="text" id="nom" name="nom" />
+	</div>
+
+	<div class="block-form">
+		<label for="pays">Votre pays</label>
+		<select id="pays" name="pays">
+		   <option value="belgique">Belgique</option>
+		   <option value="france">France</option>
+		</select>
+	</div>
+
+	<div class="block-form">
+		<label for="date">
+		   Votre date de naissance
+		   <span>(au format jj/mm/aaaa)</span>
+		</label>
+		<input type="text" id="date" name="date" />
+	</div>
+
+	<div class="block-form">
+		<label for="numero">
+		    Votre numéro de client
+		    <input type="text" id="numero" name="numero" />
+		    <span>Par exemple : 76432-BT-VZ</span>
+		</label>
+	</div>
+
+	<div class="block-form">
+		<label for="document">
+		   Ajouter un document à votre dossier
+		</label>
+		<input type="file" id="document" name="document" aria-describedby="formats" />
+	</div>
+
+	<h2>Documents actuellement dans votre dossier</h2>
+	
+	<ul>
+	   <li>CV</li>
+	   <li>Lettre de motivation</li>
+	</ul>
+	<p id="formats">Formats acceptés : pdf ou doc.</p>
+
+	<div class="block-form">
+		<label for="email">Votre email *</label>
+		<input type="text" id="email" name="email" required />
+	</div>
+
+	<div class="block-form">
+		<input type="checkbox" id="conditions" aria-required="true" />
+		<label for="conditions">J'ai lu et j'accepte les conditions générales de vente (obligatoire)</label>
+	</div>
+
+	<div class="block-form">
+		<fieldset>
+		   <legend>Participant 1</legend>
+		   <label for="prenom-1">Prénom</label>
+		   <input type="text" id="prenom-1" name="prenom-1" />
+		   <label for="nom-1">Nom</label>
+		   <input type="text" id="nom-1" name="nom-1" />
+		</fieldset>
+	</div>
+
+	<div class="block-form">
+		<fieldset>
+		   <legend>Participant 2</legend>
+		   <label for="prenom-2">Prénom</label>
+		   <input type="text" id="prenom-2" name="prenom-2" />
+		   <label for="nom-2">Nom</label>
+		   <input type="text" id="nom-2" name="nom-2" />
+		</fieldset>
+	</div>
+
+	<div class="block-form block-form-fieldset">
+		<fieldset>
+		  <legend>Sports pratiqués</legend>
+		  <ul>
+		    <li>
+		      <input type="checkbox" id="basket" />
+		      <label for="basket">Basket</label>
+		    </li>
+		    <li>
+		      <input type="checkbox" id="tennis" />
+		      <label for="tennis">Tennis</label>
+		    </li>
+		  </ul>
+		</fieldset>
+	</div>
+	<div class="block-form block-form-fieldset">
+		<fieldset>
+		  <legend>Sports préférés</legend>
+		  <ul>
+		    <li>
+		      <input type="radio" id="rugby" />
+		      <label for="rugby">Rugby</label>
+		    </li>
+		    <li>
+		      <input type="radio" id="football" />
+		      <label for="football">Football</label>
+		    </li>
+		  </ul>
+		</fieldset>
+	</div>
+	<input type="submit" value="Validation" aria-label="validation du formulaire">
+</form>	

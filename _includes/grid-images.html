@@ -1,0 +1,17 @@
+<div class="block">
+	<h2>Grid Images</h2>
+	<div class="grid-images grid-3 has-gutter">
+		{% for figcaption in site.data.figcaptions %}
+		<div class="block-item">
+			<a class="" href="">
+				<figure role="group">
+					<img src={% cycle "/images/illu1.jpg", "/images/illu2.jpg" %} alt="">
+					<figcaption class="txtcenter">
+						{{ figcaption.legend }}
+					</figcaption>	
+				</figure>
+			</a>	
+		</div>
+		{% endfor %}
+	</div>		
+</div>	

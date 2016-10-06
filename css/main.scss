@@ -1,0 +1,184 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "knacss";
+
+$brandcolor :purple;
+$greylight: #eee;
+$grey: #bababa;
+$greydark: #aaa;
+$black: #181818;
+$white: #fefefe;
+$box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+
+/* General */
+body {background:#e8e8e8;color:#4e4852;/*ratio 7.22*/font-size:1.6rem;}
+
+/* Typographie */
+body {font-family: -apple-system, 
+  BlinkMacSystemFont, 
+  "Segoe UI", 
+  Roboto, 
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  "Open Sans",
+  "Helvetica Neue", 
+  sans-serif; /* font stack from Medium */ 
+}
+a {color:$brandcolor;}
+a:hover,
+a:focus {background:$brandcolor;color:#fff;}
+article {padding:10rem 6rem;margin-bottom:8rem;background:$white;box-shadow:$box-shadow;
+  h1,
+  h2,
+  h3,
+  h4 {text-transform:uppercase;} 
+  p,li,q,blockquote {font-size:2rem;}
+  blockquote:before {top:2rem;left:1.5rem;}
+  blockquote {padding:3rem;background:$greylight;border-radius:3px;}
+  img {margin:4rem 0;box-shadow:$box-shadow;}
+  ul,
+  ol {margin:4rem 0;}
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol  {margin-bottom:0;}
+  dl {margin-bottom:4rem;}
+  dt {font-weight:bold;}
+  dd {padding-left:2rem;border-left:2px solid $greylight;}
+}
+@media (max-width: $small + 1) {
+  article {padding:4rem 1rem;}
+  p,li,q,blockquote {font-size:1.4rem}
+
+}
+
+/* Header */
+.skiplink {display:block;background:#131313;color:#fff;text-decoration:none;
+  &:hover {color:#ededed;background:$black;}
+}  
+.site-header {background:#fff;border-bottom:2px solid #131313;
+  img {margin:20px 0;}
+}
+.site-title {margin:auto;font-size:2em;}
+@media (max-width: $small + 1) {
+  .site-header {padding:0 2rem 1rem;}
+  .site-logo {text-align:center;}
+}
+
+/* Navigation Responsive */
+.navigation {display:flex;flex-direction:row;margin-left:auto;} 
+.navigation > a {padding:10px;color:$brandcolor;margin:auto;}
+.navigation > a:hover,
+.navigation > a:focus,
+.navigation > a:active {background:#555;color:#fff;}
+.nav-button {display:none; /* no button by default */ position:absolute;top:1rem;right:1rem;padding:1rem;background:#141414;color:#fff;border:none;cursor:pointer;} 
+@media (max-width: $small + 1) {
+  .js-enabled html,
+  .js-enabled body {overflow-x:hidden; /* you shall not pass! */ } 
+  .js-enabled .nav-button {display: inline-block; }
+  .js-enabled .navigation {position:absolute;width:60vw;top:0;bottom:0;left:0;z-index:0;background:#141414; /* will be under everything */flex-direction:column;transform:translateX(-60vw); }
+  .js-enabled .navigation a {margin:0;color:#fff;}
+  /* styling opened nav */
+  /*.js-enabled  {position: relative;  will-change: transform; min-height: 100vh; } */
+  .js-enabled .navigation.is-opened {transform:translateX(0);transition: transform .25s;}
+}
+
+/* Footer */
+.site-footer {padding:8rem 0;font-size:1.3rem;background:$grey;color:#000;
+  h1,
+  h2 {font-size:1.6rem;text-transform:uppercase;}
+  ul {list-style:none;padding:0;}
+  li a {display:block;padding:2rem 1.5rem;text-transform:uppercase;border-bottom:1px solid $greylight;text-decoration:none; }
+  .flex-container {flex-direction:row;justify-content:center;margin-top:6rem;
+    li a {border:none;text-transform:none;}
+  }
+}
+@media (max-width: $small + 1) {
+  .site-footer {padding:2rem;
+    .w33 {width:auto;}
+  }
+}
+
+/* MAIN */
+.main {min-height:100vh;padding:4rem 0;
+  h1,
+  h2 {font-weight:300;}
+}
+.grid-images {
+  figure {position:relative;z-index:-1;}
+  a {color:$black;text-decoration:none;}
+  img {border-radius:2px 2px 0 0;}
+  a:hover,
+  a:focus {opacity:.8;}
+  figcaption {padding:1.5rem 1.2rem;background:$greydark;border-radius:0 0 2px 2px;font-style:italic;text-decoration:none;}
+  figcaption:hover,
+  figcaption:focus {background:$white;}
+}
+@media (max-width: $small + 1) {
+  .main {padding:2rem;}
+
+}
+
+/* FORM */
+form {max-width:800px;margin:8rem 0;}
+.mention {text-align:right;}
+.block-form {margin:2rem 0;display:flex;flex-wrap:wrap;align-items:center;}
+
+legend {margin-bottom:2rem;font-size:2rem;text-transform:uppercase;}
+label,
+select,
+input {margin:0;font-size:1.4rem;letter-spacing: 0.03em;cursor:pointer;overflow:hidden;}
+label {margin-right:5px;font-size:1.8rem;text-align:right;}
+input {padding:1.5rem;}
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="submit"]) {flex:1;border:none;}
+span {font-style:italic}
+
+select,
+input[type="submit"],
+button {padding:1.5rem;position:relative;-moz-user-select:none;background-color:#fff;border:none;border-radius:2px;color:rgba(0, 0, 0, 0.87);text-align:center;transition:all 0.2s ease-in-out 0s;vertical-align:middle;box-shadow:$box-shadow;}
+select:hover,
+input[type="submit"]:hover,
+button:hover,
+select:focus,
+input[type="submit"]:focus,
+button:focus,
+select:active,
+input[type="submit"]:active,
+button:active {background-color:$greylight;color:rgba(0, 0, 0, 0.87);}
+
+input[type="submit"],
+button {display:flex;margin:4rem 0 0 auto;}
+
+.block-form-fieldset 
+  fieldset {margin:0;
+  ul {list-style:none;border-left:2px solid $greylight;}
+  input[type="radio"],
+  input[type="checkbox"] {vertical-align:middle;}
+}
+/* Search */
+.search {background:$grey;border-bottom:2px solid $greydark;padding:4rem 0;
+  form {margin:auto;display:flex;flex-direction:row;}
+  label {font-size:1.6rem;margin-top:.8rem;}
+  input[type="text"] {flex:1;padding:0 1.5rem;margin:0;}
+  input[type="submit"] {margin:0;}
+}
+@media (max-width: $small + 1) {
+  .block-form {flex-direction:column;align-items:start;
+    label {text-align:left;}
+    span {display:block;font-style:italic;}
+    fieldset > * {display:flex;flex-direction:column;align-items:start ;}
+
+  }
+  .search {
+    form {flex-direction:column;padding:0 2rem;}
+    label {text-align:left;}
+    input[type="text"] {padding:1.5rem;}
+    input[type="submit"] {width:auto;margin:.5rem 0 auto auto;}
+  }
+}
