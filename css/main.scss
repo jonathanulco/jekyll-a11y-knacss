@@ -40,7 +40,7 @@ article {padding:10rem 6rem;margin-bottom:8rem;background:$white;box-shadow:$box
   h4 {text-transform:uppercase;} 
   p,li,q,blockquote {font-size:2rem;}
   blockquote:before {top:2rem;left:1.5rem;}
-  blockquote {padding:3rem 4rem;background:$greylight;border-radius:3px;}
+  blockquote {padding:3rem 4rem 3rem 6rem;background:$greylight;border-radius:3px;}
   img {margin:4rem 0;box-shadow:$box-shadow;}
   ul,
   ol {margin:4rem 0;}
@@ -59,9 +59,7 @@ article {padding:10rem 6rem;margin-bottom:8rem;background:$white;box-shadow:$box
 }
 
 /* Header */
-.skiplink {display:block;background:#131313;color:#fff;text-decoration:none;
-  &:hover {color:#ededed;background:$black;}
-}  
+.skiplink {display:block;background:#131313;color:#fff;text-decoration:none;}  
 .site-header {background:#fff;border-bottom:2px solid #131313;
   img {margin:20px 0;}
 }
@@ -129,6 +127,7 @@ article {padding:10rem 6rem;margin-bottom:8rem;background:$white;box-shadow:$box
 form {max-width:800px;margin:8rem 0;}
 .mention {text-align:right;}
 .block-form {margin:2rem 0;display:flex;flex-wrap:wrap;align-items:center;}
+fieldset {width:100% !important;display:flex;align-items:center;}
 
 legend {margin-bottom:2rem;font-size:2rem;text-transform:uppercase;}
 label,
@@ -136,7 +135,8 @@ select,
 input {margin:0;font-size:1.4rem;letter-spacing: 0.03em;cursor:pointer;overflow:hidden;}
 label {margin-right:5px;font-size:1.8rem;text-align:right;}
 input {padding:1.5rem;}
-input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="submit"]) {flex:1;border:none;}
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="submit"]) {flex:1;border:none;width:100%;}
+label input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="submit"]) {width:auto;}
 span {font-style:italic}
 
 select,
@@ -151,15 +151,18 @@ button:focus,
 select:active,
 input[type="submit"]:active,
 button:active {background-color:$greylight;color:rgba(0, 0, 0, 0.87);}
+textarea {padding:1.5rem;min-height:15em;flex:1;border:none;}
 
 input[type="submit"],
 button {display:flex;margin:4rem 0 0 auto;}
+fieldset input {margin-right:2rem;}
 
 .block-form-fieldset 
   fieldset {margin:0;
+  label {margin-left:1rem;}
   ul {list-style:none;border-left:2px solid $greylight;}
   input[type="radio"],
-  input[type="checkbox"] {vertical-align:middle;}
+  input[type="checkbox"] {vertical-align:middle;margin-right:0;}
 }
 /* Search */
 .search {background:$grey;border-bottom:2px solid $greydark;padding:4rem 0;
@@ -169,11 +172,13 @@ button {display:flex;margin:4rem 0 0 auto;}
   input[type="submit"] {margin:0;}
 }
 @media (max-width: $small + 1) {
+  fieldset input {margin-right:0;}
   .block-form {flex-direction:column;align-items:start;
     label {text-align:left;}
     span {display:block;font-style:italic;}
+    label input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="submit"]) {width:100%;}
     fieldset > * {display:flex;flex-direction:column;align-items:start ;}
-
+    textarea {width:100%;}
   }
   .search {
     form {flex-direction:column;padding:0 2rem;}
