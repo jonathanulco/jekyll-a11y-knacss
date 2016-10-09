@@ -6,13 +6,17 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Theme Jekyll Knacss 
+title: Theme Jekyll Knacss
 baseline: Jekyll-Accessibility Knacss
-description: Un thème jekyll basé sur Knacss avec une pointe d'accessibilité 
-baseurl: "" # the subpath of your site, e.g. /blog
+description: Un thème jekyll basé sur Knacss avec une pointe d'accessibilité
+baseurl: "/a11y-knacss"  # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 locale: fr # the primary language of your content
 twitter_username: uxlco0
 
 # Build settings
 markdown: kramdown
+theme: jekyll-a11y-knacss
+exclude:
+  - Gemfile
+  - Gemfile.lock
