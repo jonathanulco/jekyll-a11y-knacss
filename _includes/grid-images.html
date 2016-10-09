@@ -5,13 +5,15 @@
 		<div class="block-item">
 			<a class="" href="">
 				<figure role="group">
-					<img src={% cycle "/assets/images/illu1.jpg", "/assets/images/illu2.jpg" %} alt="">
+          {% assign image1 = "/assets/images/illu1.jpg" | relative_url %}
+          {% assign image2 = "/assets/images/illu2.jpg" | relative_url %}
+					<img src={% cycle image1, image2 %} alt="">
 					<figcaption class="txtcenter">
 						{{ figcaption.legend }}
-					</figcaption>	
+					</figcaption>
 				</figure>
-			</a>	
+			</a>
 		</div>
 		{% endfor %}
-	</div>		
-</div>	
+	</div>
+</div>
