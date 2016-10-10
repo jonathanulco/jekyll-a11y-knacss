@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ site.locale }}">
 
   {% include head.html %}
 
@@ -8,7 +8,7 @@
     {% include header.html %}
     {% include search.html %}
     <main id="main" class="main mw1140p center" role="main">
-    {% include article.html %}
+    {% include articles.html %}
     {% include grid-images.html %}
     {% include form.html %}
     </main>
@@ -17,7 +17,4 @@
 
   </body>
   {% include scripts.html %}
-  <script>
-
-  </script>
 </html>
