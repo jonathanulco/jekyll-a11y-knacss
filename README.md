@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # jekyll-a11y-knacss
 Jekyll-a11y-knacss est un thème pour jekyll basé sur [Knacss](http://knacss.com/) un framework produit par [Raphael Goetter](https://twitter.com/goetter)
 
